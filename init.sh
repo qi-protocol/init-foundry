@@ -99,11 +99,25 @@ contract LoadKey is Test {
   function setUp() public virtual {
     // setup private key
     string memory key = vm.readFile(\".secret\");
-    key_bytes = vm.parseBytes32(bytes(key));
+    key_bytes = vm.parseBytes32(key);
     assembly {
       sstore(privateKey.slot, sload(key_bytes.slot))
     }
-    eoaAddress = address(privateKey);
+    eoaAddress = address(uint160(privateKey));
   }
 
 }" > test/base/loadkey.t.sol
+
+echo > .secret
+echo "
+PRIVATE_KEY=1111111111111111111111111111111111111111111111111111111111111111
+PUBLIC_KEY=0x19E7E376E7C213B7E7e7e46cc70A5dD086DAff2A
+INFURA_GOERLI_TEST_RPC_URL=
+POLYSCAN_API_KEY=
+"> .env
+echo "1111111111111111111111111111111111111111111111111111111111111111" > .secret.example
+
+# Create readme for how to deploy
+echo "
+forge script script/fileName.s.sol:Deploy --broadcast --rpc-url \$NETWORK_RPC --verify \$API_KEY --private-key \$PRIVATE_KEY
+"> DEPLOY.md
