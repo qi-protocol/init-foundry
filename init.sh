@@ -13,6 +13,8 @@ git submodule add -f https://github.com/foundry-rs/forge-std lib/forge-std
 git submodule add -f https://github.com/Openzeppelin/openzeppelin-contracts lib/openzeppelin-contracts
 git submodule add -f https://github.com/Openzeppelin/openzeppelin-contracts-upgradeable lib/openzeppelin-contracts-upgradeable
 git submodule add -f https://github.com/eth-infinitism/account-abstraction lib/account-abstraction
+git submodule add -f https://github.com/Uniswap/v3-core lib/uniswap-v3-core
+git submodule add -f https://github.com/Uniswap/v3-periphery lib/uniswap-v3-periphery
 
 # Output remappings.txt
 echo "ds-test/=lib/forge-std/lib/ds-test/src/" > remappings.txt
