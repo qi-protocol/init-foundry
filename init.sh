@@ -23,6 +23,8 @@ echo "@openzeppelin/=lib/openzeppelin-contracts/" >> remappings.txt
 echo "@oppenzeppelin-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts" >> remappings.txt
 echo "account-abstraction/=lib/account-abstraction/contracts" >> remappings.txt
 echo "@4337/=lib/account-abstraction/contracts" >> remappings.txt
+echo @uniswap-v3-core/=lib/uniswap-v3-core/contracts >> remappings.txt
+echo @uniswap-v3-periphery=lib/uniswap-v3-periphery >> remappings.txt
 
 echo "@utils/=src/utils/" >> remappings.txt
 echo "@interfaces/=src/interfaces/" >> remappings.txt
